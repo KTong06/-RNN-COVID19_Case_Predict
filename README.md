@@ -6,8 +6,11 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
 <a><img alt='love' src="http://ForTheBadge.com/images/badges/built-with-love.svg"></a>
 
-# [RNN] What's for TOMORROW? -COVID19_Case_Predict-
+# [RNN] What's for TOMORROW? -COVID-19_Case_Predict-
 As slow as it takes I am finally pick up a dying trend (or maybe not) : COVID-19 Case Prediction Model! Predictions are important especially when it comes to anticipating a crisis e.g. food supply shortage, disease breakout, earthquake/volcanic eruptions etc. [Dataset](https://github.com/KTong06/-RNN-COVID19_Case_Predict/tree/main/dataset) is readily available.
+
+[UPDATE] Model optimization : Improved model performance by increase training epoch to 1000, reducing MAPE to 0.11.
+![eval_test_plot_1000epo](static/eval_test_plot_1000epo.png)
 
 # Model Performance
 Model is able to achieve **Mean Absolute Percentage Error (MAPE)** of value **0.14**: (MSE-Mean Squared Error, MAE-Mean Absolute Error)
@@ -105,6 +108,7 @@ x_test=np.array(x_test)
 
 # Discussion
 From the prediction plot we could see the model tries to keep up with the trend of real cases with minor 'lagness', and tends to represent as 'moving averages' when real cases fluctuates. Proceeding with the spike of real cases the performance of model reduced even more and not able to capture the rapid and fluctuations of real cases. As such, the model still has room for improvement although achieving evaluation MAPE value of 0.14. Some suggestions to improve include:
+- [x] Increase number of epoch
 - [ ] Implement `Bidirectional()` LSTM layer.
 - [ ] Modify model architecture as such to incorporate CNN pooling layers.
 - [ ] Apply moving average in data preprocessing step to smoothen the fluctuations.
