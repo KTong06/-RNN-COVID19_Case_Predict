@@ -9,7 +9,13 @@
 # [RNN] What's for TOMORROW? -COVID-19_Case_Predict-
 As slow as it takes I am finally pick up a dying trend (or maybe not) : COVID-19 Case Prediction Model! Predictions are important especially when it comes to anticipating a crisis e.g. food supply shortage, disease breakout, earthquake/volcanic eruptions etc. [Dataset](https://github.com/KTong06/-RNN-COVID19_Case_Predict/tree/main/dataset) is readily available.
 
-[UPDATE] Model optimization : Improved model performance by increase training epoch to 1000, reducing MAPE to 0.11.
+# [MODEL UPDATE] 
+Model optimization : Reduce MAPE to 0.09 by reducing window size to 7.
+
+![eval_test_plot_win7](static/eval_test_plot_win7.png)
+
+Model optimization : Reduce MAPE to 0.11 by increase training epoch to 1000.
+
 ![eval_test_plot_1000epo](static/eval_test_plot_1000epo.png)
 
 # Model Performance
