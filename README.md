@@ -10,11 +10,15 @@
 As slow as it takes I am finally pick up a dying trend (or maybe not) : COVID-19 Case Prediction Model! Predictions are important especially when it comes to anticipating a crisis e.g. food supply shortage, disease breakout, earthquake/volcanic eruptions etc. [Dataset](https://github.com/KTong06/-RNN-COVID19_Case_Predict/tree/main/dataset) is readily available.
 
 # [MODEL UPDATE] 
-Model optimization : Reduce MAPE to 0.09 by reducing window size to 7.
+Reduce computation power by reducing nodes in network from 64-32 to 8-4 nodes in hidden layer 1 and hidden layer 2 respectively, model performance is similar:
+![model_lessnode](static/model_lessnode.png)
+![eval_test_plot_lessnode](static/eval_test_plot_lessnode.png)
+
+**Model optimization** : Reduce MAPE to 0.09 by reducing window size to 7.
 
 ![eval_test_plot_win7](static/eval_test_plot_win7.png)
 
-Model optimization : Reduce MAPE to 0.11 by increase training epoch to 1000.
+**Model optimization** : Reduce MAPE to 0.11 by increase training epoch to 1000.
 
 ![eval_test_plot_1000epo](static/eval_test_plot_1000epo.png)
 
@@ -114,10 +118,12 @@ x_test=np.array(x_test)
 
 # Discussion
 From the prediction plot we could see the model tries to keep up with the trend of real cases with minor 'lagness', and tends to represent as 'moving averages' when real cases fluctuates. Proceeding with the spike of real cases the performance of model reduced even more and not able to capture the rapid and fluctuations of real cases. As such, the model still has room for improvement although achieving evaluation MAPE value of 0.14. Some suggestions to improve include:
-- [x] Increase number of epoch
-- [ ] Implement `Bidirectional()` LSTM layer.
+- [x] Increase number of epoch.
+- [x] Reduce window size. 
+- [ ] ~~Implement `Bidirectional()` LSTM layer.~~
+- [ ] ~~Apply moving average in data preprocessing step to smoothen the fluctuations.~~
+- [ ] ~~Apply lrDecay on Adam optimizer.~~
 - [ ] Modify model architecture as such to incorporate CNN pooling layers.
-- [ ] Apply moving average in data preprocessing step to smoothen the fluctuations.
 
 
 
