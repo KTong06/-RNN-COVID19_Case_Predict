@@ -11,6 +11,7 @@ As slow as it takes I am finally pick up a dying trend (or maybe not) : COVID-19
 
 # [MODEL UPDATE] 
 Reduce computation power by reducing nodes in network from 64-32 to 8-4 nodes in hidden layer 1 and hidden layer 2 respectively, model performance is similar:
+
 ![model_lessnode](static/model_lessnode.png)
 ![eval_test_plot_lessnode](static/eval_test_plot_lessnode.png)
 
